@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Task App</title>
+</head>
+<body>
+    <!-- Cabeçalho da página, com menu de interação entre as páginas -->
+    <header>
+        <div>
+            <img  src="./assets/well-organized-logo.png" alt="">
+        </div>
+        <div class="menu">
+            <a href="TaskApp.html"><p>A fazer</p></a>
+            <span>|</span>
+            <a href="arquivadas.html"><p>Arquivadas</p></a>
+        </div>
+    </header>
+
+    <!-- Parte de adição de tarefas -->
+    <section>
+        <div id="btnToggle">
+            <div id="toggleAdd" class="add-tarefa">
+                <div class="add-tarefa">
+                    <img src="./assets/task-add-icon.png" alt="logo_add">
+                    <h3>Adicionar Tarefa</h3>
+                </div>
+            </div>
+        </div>
+            
+        <div id="menus">
+            <div class="lista-adicao">
+                <p>Descrição</p><input type="text" id="entrada" maxlength="170" required><p>Cor</p>
+                <div class="checkboxes">
+                    <input id="azul" type="checkbox" value="1" class="check">
+                    <input id="verde" type="checkbox" value="2" class="check">
+                    <input id="rosa" type="checkbox" value="3" class="check">
+                    <input id="roxo" type="checkbox" value="4" class="check">
+                    <input id="amarelo" type="checkbox" value="5" class="check">
+                    <input id="laranja" type="checkbox" value="6" class="check">
+                    <input id="branco" type="checkbox" value="7" class="check">
+                </div>
+                <button id="add">Adicionar</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Parte principal da página, lista de tarefas -->
+    <main>
+        <div>
+            <ul id="lista-a-fazer"></ul>
+        </div>  
+    </main>
+
+    <!-- Rodapé da página -->
+    <footer>
+        <span id="status">0/0 concluídas</span>
+    </footer>
+
+    <!-- Modal campo não pode ser vazio -->
+    <div id="modalNoEmpty" class="modal">
+        <div class="modal-config">    
+            <div role="alert">
+                   <p>Campo não pode ser vazio!</p>
+              </div> 
+            <button type="button" class="btn-modal" onclick="closeEmpty()">Fechar</button>
+        </div>
+    </div>
+
+    <!-- Modal item já existe -->
+    <div id="modalExist" class="modal">
+        <div class="modal-config">    
+            <div role="alert">
+                   <p>Essa tarefa já existe!</p>
+              </div> 
+            <button type="button" class="btn-modal" onclick="closeExist()">Fechar</button>
+        </div>
+    </div>
+
+    <div id="modalCor" class="modal">
+        <div class="modal-config">    
+            <div role="alert">
+                   <p>Selecione uma cor!</p>
+              </div> 
+            <button type="button" class="btn-modal" onclick="closeCor()">Fechar</button>
+        </div>
+    </div>
+
+    <script src="./js/script.js"></script>
+</body>
+</html>
